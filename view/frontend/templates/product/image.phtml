@@ -1,0 +1,19 @@
+<?php /** @var $block \Magento\Catalog\Block\Product\Image */ ?>
+
+<img class="photo image lazyload"
+    loading="lazy"
+    <?= $block->escapeHtmlAttr($block->getCustomAttributes()) ?>
+     data-src="<?= $block->escapeUrl($block->getImageUrl()) ?>"
+     width="<?= $block->escapeHtmlAttr($block->getWidth()) ?>"
+     height="<?= $block->escapeHtmlAttr($block->getHeight()) ?>"
+     alt="<?= $block->escapeHtmlAttr($block->stripTags($block->getLabel(), null, true)) ?>" />
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ImageObject",
+        "image": "<?= $block->escapeUrl($block->getImageUrl()) ?>",
+        "name": "<?= $block->escapeJs($block->stripTags($block->getLabel(), null, true)) ?>",
+        "description": "<?= $block->escapeJs($block->stripTags($block->getLabel(), null, true)) ?>"
+    }
+</script>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="handh" translate="label" sortOrder="120">
+            <label>HandH Commerce</label>
+        </tab>
+        <section id="handh_lazyload" translate="label" type="text" sortOrder="10" showInDefault="1">
+            <label>Lazyload</label>
+            <tab>handh</tab>
+            <resource>HandH_Lazyload::system_menu</resource>
+
+            <group id="handh_lazyload_settings" translate="label" type="text" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>HandH Lazyload Settings</label>
+                <field id="enable_lazyload" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable lazy loading of product images?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
